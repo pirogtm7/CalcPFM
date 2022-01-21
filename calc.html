@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+
+        function checkIfUndefined(operation, a, b) {
+            if (!operation || !a || !b) {
+                return true;
+            }
+        }
+
+        function checkIfNotNumbers(a, b) {
+            let numA = Number(a);
+            let numB = Number(b);
+
+            if (!numA && numA != 0 || !numB && numB != 0) {
+                return true;
+            }
+        }
+
+        function Calc(operation, a, b) {
+            
+            if (checkIfUndefined(operation, a, b)) {
+                return 'Error';
+            }
+
+            if (checkIfNotNumbers(a, b)) {
+                return 'Not a Num';
+            }
+            
+            if (operation == 'sum') {
+                return (a + b);
+            } else if (operation == 'retr') {
+                return (a - b);
+            } else if (operation == 'multi') {
+                return (a * b);
+            } else if (operation == 'divide') {
+                return (a / b);
+            } else if (operation == 'pow') {
+                return (a ** b);
+            } else if (operation == '%') {
+                return (a % b);
+            } else {
+                return 'unknown operation';
+            }
+        }
+
+        function main() {
+            let operation = prompt('operation?');
+            let a = prompt('a?');
+            let b = prompt('b?');
+
+            alert(Calc(operation, a, b));
+        }
+
+        main();
+
+    </script>
+</body>
+
+</html>
